@@ -8,8 +8,8 @@ import (
 	"github.com/dollarkillerx/RubiesCube/internal/utils"
 	"github.com/gin-gonic/gin"
 	"gorm.io/datatypes"
-	"log"
 
+	"log"
 	"strings"
 )
 

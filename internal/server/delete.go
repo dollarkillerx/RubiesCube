@@ -6,6 +6,8 @@ import (
 	"github.com/dollarkillerx/RubiesCube/internal/pkg/response"
 	"github.com/dollarkillerx/RubiesCube/internal/utils"
 	"github.com/gin-gonic/gin"
+
+	"log"
 )
 
 func (s *Server) Delete(ctx *gin.Context) {
@@ -18,5 +20,12 @@ func (s *Server) Delete(ctx *gin.Context) {
 		return
 	}
 
-	s.storage.KvDelete(model.ProjectID, model.Account, payload.Bucket, payload.Key)
+	err = s.storage.KvDelete(model.ProjectID, model.Account, payload.Bucket, payload.Key)
+	if err != nil {
+		log.Println(err)
+		response.Return(ctx, errs.SqlSystemError)
+		return
+	}
+
+	response.Return(ctx, gin.H{})
 }

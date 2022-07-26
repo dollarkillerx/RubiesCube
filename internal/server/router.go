@@ -13,13 +13,13 @@ func (s *Server) router() {
 		v1.POST("/delete", s.Delete)
 	}
 
-	maV1 := s.app.Group("/api/ma/v1")
-	{
-		user := maV1.Group("user_center")
-		{
-			user.POST("register")
-			user.POST("disabled")
-			user.POST("change_password")
-		}
-	}
+	//maV1 := s.app.Group("/api/ma/v1")
+	//{
+	//	user := maV1.Group("user_center")
+	//	{
+	//		//user.POST("register")
+	//		//user.POST("disabled")
+	//		//user.POST("change_password")
+	//	}
+	//}
 }
