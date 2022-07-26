@@ -2,6 +2,7 @@ package simple
 
 import (
 	"github.com/dollarkillerx/RubiesCube/internal/conf"
+	"github.com/dollarkillerx/RubiesCube/internal/pkg/models"
 	"github.com/dollarkillerx/RubiesCube/internal/utils"
 	"gorm.io/gorm"
 )
@@ -16,12 +17,12 @@ func NewSimple(conf *conf.PgSQLConfig) (*Simple, error) {
 		return nil, err
 	}
 
-	//sql.AutoMigrate(
-	//	&models.ManagerUser{},
-	//	&models.ManagerProject{},
-	//	&models.UserCenter{},
-	//	&models.KVStorage{},
-	//)
+	sql.AutoMigrate(
+		&models.ManagerUser{},
+		&models.ManagerProject{},
+		&models.UserCenter{},
+		&models.KVStorage{},
+	)
 
 	return &Simple{
 		db: sql,

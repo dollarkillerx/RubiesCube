@@ -3,7 +3,9 @@ module github.com/dollarkillerx/RubiesCube
 go 1.18
 
 require (
+	github.com/dollarkillerx/jwt v0.0.4
 	github.com/gin-gonic/gin v1.8.1
+	github.com/pkg/errors v0.8.1
 	github.com/rs/xid v1.4.0
 	gorm.io/datatypes v1.0.7
 	gorm.io/driver/postgres v1.3.8

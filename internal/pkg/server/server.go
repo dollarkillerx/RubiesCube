@@ -15,7 +15,7 @@ type Server struct {
 
 func NewServer() *Server {
 	return &Server{
-		app: gin.Default(),
+		app: gin.New(),
 	}
 }
 
@@ -29,5 +29,8 @@ func (s *Server) Run() error {
 	s.storage = newSimple
 
 	s.app.Use(middleware.Cors())
+	s.app.Use(middleware.HttpRecover())
+	s.app.Use(middleware.SetBasicInformation())
+
 	return s.app.Run(conf.CONF.ListenAddr)
 }
