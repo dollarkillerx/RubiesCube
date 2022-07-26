@@ -2,9 +2,9 @@ package server
 
 import (
 	"github.com/dollarkillerx/RubiesCube/internal/conf"
-	"github.com/dollarkillerx/RubiesCube/internal/pkg/middleware"
-	"github.com/dollarkillerx/RubiesCube/internal/pkg/storage"
-	"github.com/dollarkillerx/RubiesCube/internal/pkg/storage/simple"
+	middleware2 "github.com/dollarkillerx/RubiesCube/internal/middleware"
+	"github.com/dollarkillerx/RubiesCube/internal/storage"
+	"github.com/dollarkillerx/RubiesCube/internal/storage/simple"
 	"github.com/gin-gonic/gin"
 )
 
@@ -28,9 +28,9 @@ func (s *Server) Run() error {
 
 	s.storage = newSimple
 
-	s.app.Use(middleware.Cors())
-	s.app.Use(middleware.HttpRecover())
-	s.app.Use(middleware.SetBasicInformation())
+	s.app.Use(middleware2.Cors())
+	s.app.Use(middleware2.HttpRecover())
+	s.app.Use(middleware2.SetBasicInformation())
 
 	return s.app.Run(conf.CONF.ListenAddr)
 }

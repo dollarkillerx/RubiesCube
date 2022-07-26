@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/dollarkillerx/RubiesCube/internal/pkg/server"
+	"github.com/dollarkillerx/RubiesCube/internal/server"
 
 	"log"
 )
