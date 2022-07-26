@@ -16,7 +16,7 @@ type ManagerProject struct {
 }
 
 type ProjectPayload struct {
-	PayloadList []string `json:"payload_list"`
+	Buckets []string `json:"buckets"`
 }
 
 func (c ProjectPayload) Value() (driver.Value, error) {

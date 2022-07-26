@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/dollarkillerx/RubiesCube/internal/storage/simple"
 	"log"
 
 	"github.com/dollarkillerx/RubiesCube/internal/conf"
 	"github.com/dollarkillerx/RubiesCube/internal/pkg/models"
+	"github.com/dollarkillerx/RubiesCube/internal/storage/simple"
 	"github.com/rs/xid"
 	"gorm.io/datatypes"
 )
