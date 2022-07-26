@@ -1,2 +1,2 @@
-# RubiksCube
-RubiksCube (BaaS, IM, Database)
+# RubiesCube
+RubiesCube (BaaS, IM, Database)
